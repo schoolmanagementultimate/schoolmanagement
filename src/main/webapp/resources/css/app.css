@@ -1,0 +1,65 @@
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h3{
+	margin-top: 10px;
+}
+
+.clear-both {
+	clear: both;
+}
+
+#container {
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(45, 45, 47, 1);
+    float: none;
+    color: white;
+    font-size: xx-large;
+    text-align: center;
+}
+
+#search {
+	margin-top: 10px;
+}
+
+.search-area {
+	margin: 0 20%;
+}
+
+.carousel-inner{
+  width:100%;
+  max-height: 300px !important;
+  box-shadow: 1px 1px 1px 2px black;
+}
+
+.carousel {
+	width:90%;
+	margin: 0 auto;	
+}
+
+.slider {
+  width: 100%;
+  height:300px !important;
+}
+
+#slideshow {
+	margin: 10px 0;
+}
+
+.inner-container {
+	max-height: 200px;
+	padding: 10px;
+	text-align: center;
+}
+
+#details-container {
+	padding: 0 5%;
+}
