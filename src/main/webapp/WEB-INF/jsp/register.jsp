@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>registration Page</title>
+<title><spring:message code="registration.page.title" /></title>
 </head>
 <body>
 	<div id="registration">
@@ -44,10 +44,16 @@
 						</form:select></td>
 				</tr>
 				<tr>
-					<%-- <td>
-					<form:label path="">Submit</form:label>
-				</td> --%>
-					<td><input type="submit" /></td>
+					<td><form:label path="selectedSyllabus">
+							<spring:message code="registration.page.syllabus" />
+						</form:label></td>
+					<td><form:select path="selectedSyllabus">
+							<form:option value="" label="...." />
+							<form:options items="${syllabusList}" />
+						</form:select></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Register" /></td>
 				</tr>
 			</table>
 		</form:form>

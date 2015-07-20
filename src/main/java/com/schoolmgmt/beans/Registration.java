@@ -14,7 +14,8 @@ public class Registration implements Serializable {
 	private String name,
 					area,
 					contactNo,
-					selectedCountry;
+					selectedCountry,
+					selectedSyllabus;
 	private String[] city,
 					syllabus,
 					country;
@@ -65,6 +66,18 @@ public class Registration implements Serializable {
 	 */
 	public void setSelectedCountry(String selectedCountry) {
 		this.selectedCountry = selectedCountry;
+	}
+	/**
+	 * @return the selectedSyllabus
+	 */
+	public String getSelectedSyllabus() {
+		return selectedSyllabus;
+	}
+	/**
+	 * @param selectedSyllabus the selectedSyllabus to set
+	 */
+	public void setSelectedSyllabus(String selectedSyllabus) {
+		this.selectedSyllabus = selectedSyllabus;
 	}
 	/**
 	 * @return the city

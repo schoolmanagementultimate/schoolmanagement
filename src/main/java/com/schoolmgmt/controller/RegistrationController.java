@@ -48,4 +48,15 @@ public class RegistrationController {
 		list.add("India");
 		return list;
 	}
+	
+	// TODO need to populate actual syllabus List.
+	@ModelAttribute("syllabusList")
+	public List<String> syllabusList() {
+		List<String> list = new LinkedList<String>();
+		list.add("Matriculation");
+		list.add("CBSE");
+		list.add("ICSE");
+		list.add("State Board");
+		return list;
+	}
 }
