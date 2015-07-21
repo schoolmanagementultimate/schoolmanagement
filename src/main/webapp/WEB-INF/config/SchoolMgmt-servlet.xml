@@ -10,6 +10,5 @@
 	<context:annotation-config />
 
 	<import resource="SchoolMgmt-mvc.xml" />
-	<import resource="SchoolMgmt-datasource.xml" />
 	
 </beans>
