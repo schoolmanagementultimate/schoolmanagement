@@ -2,12 +2,27 @@ package com.schoolmgmt.beans;
 
 import java.io.Serializable;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
 
-public class Registration implements Serializable {
+/**
+ * 
+ * @author RAMA
+ *
+ * <p>
+ * 	Beans for the Registration page.</br>
+ *  Spring document for scope is <a href=
+ *  "http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/Scope.html#proxyMode--">
+ *  this</a>.
+ * </p>
+ * 
+ */
 
-	/**
-	 * 
-	 */
+@Component
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+public class RegistrationBean implements Serializable {
+
 	private static final long serialVersionUID = 4197452551999212240L;
 
 	
@@ -16,9 +31,6 @@ public class Registration implements Serializable {
 					contactNo,
 					selectedCountry,
 					selectedSyllabus;
-	private String[] city,
-					syllabus,
-					country;
 	/**
 	 * @return the name
 	 */
@@ -79,42 +91,5 @@ public class Registration implements Serializable {
 	public void setSelectedSyllabus(String selectedSyllabus) {
 		this.selectedSyllabus = selectedSyllabus;
 	}
-	/**
-	 * @return the city
-	 */
-	public String[] getCity() {
-		return city;
-	}
-	/**
-	 * @param city the city to set
-	 */
-	public void setCity(String[] city) {
-		this.city = city;
-	}
-	/**
-	 * @return the syllabus
-	 */
-	public String[] getSyllabus() {
-		return syllabus;
-	}
-	/**
-	 * @param syllabus the syllabus to set
-	 */
-	public void setSyllabus(String[] syllabus) {
-		this.syllabus = syllabus;
-	}
-	/**
-	 * @return the country
-	 */
-	public String[] getCountry() {
-		return country;
-	}
-	/**
-	 * @param country the country to set
-	 */
-	public void setCountry(String[] country) {
-		this.country = country;
-	}
-	
 	
 }
