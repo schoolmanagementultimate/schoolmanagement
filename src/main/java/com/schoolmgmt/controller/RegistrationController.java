@@ -3,6 +3,8 @@ package com.schoolmgmt.controller;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -21,6 +23,8 @@ import com.schoolmgmt.beans.RegistrationBean;
 @RequestMapping(value = "/register")
 public class RegistrationController {
 
+	static Logger logger = LoggerFactory.getLogger(RegistrationController.class);
+	
 	private RegistrationBean registration;
 	
 	@Autowired
@@ -30,6 +34,7 @@ public class RegistrationController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView registration() {
+		logger.info("In Registration method");
 		ModelAndView modelAndView = new ModelAndView("register");
 		modelAndView.addObject("registrationValues", registration);
 		return modelAndView;
@@ -37,7 +42,7 @@ public class RegistrationController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView registration(@ModelAttribute("registrationValues") RegistrationBean registration) {
-		System.out.println(registration.getName().concat(registration.getContactNo()).concat(registration.getArea())
+		logger.info(registration.getName().concat(registration.getContactNo()).concat(registration.getArea())
 				.concat(registration.getSelectedCountry()));
 		ModelAndView modelAndView = new ModelAndView("home");
 		return modelAndView;
