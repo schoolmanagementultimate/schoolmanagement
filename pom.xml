@@ -9,7 +9,8 @@
 		<springframework.version>4.1.7.RELEASE</springframework.version>
 		<hibernate.version>4.3.10.Final</hibernate.version>
 		<mysql.version>5.1.31</mysql.version>
-		
+		<!-- Compiler properties -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- To prevent java version automatically change to 1.5 after maven update -->
 		<maven.compiler.source>1.7</maven.compiler.source>
    		<maven.compiler.target>1.7</maven.compiler.target>
@@ -67,6 +68,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Servlet+JSP+JSTL -->
