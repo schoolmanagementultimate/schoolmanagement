@@ -3,38 +3,40 @@ package com.schoolmgmt.controller;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.schoolmgmt.beans.Registration;
+import com.schoolmgmt.beans.RegistrationBean;
 
 /**
  * 
  * @author RAMA
- * <p> Controller class for School Management Registration page</p> 
+ * <p>Controller class for School Management Registration page.</p> 
  */
 @Controller
 @RequestMapping(value = "/register")
 public class RegistrationController {
 
-	/*
-	 * @RequestMapping(method = RequestMethod.GET) public ModelAndView hello(){
-	 * return new ModelAndView("home"); }
-	 */
+	private RegistrationBean registration;
+	
+	@Autowired
+	public void setRegistrationBean(RegistrationBean registration){
+		this.registration = registration;
+	}
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView registration() {
 		ModelAndView modelAndView = new ModelAndView("register");
-		Registration registration = new Registration();
 		modelAndView.addObject("registrationValues", registration);
 		return modelAndView;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView registration(@ModelAttribute("registrationValues") Registration registration) {
+	public ModelAndView registration(@ModelAttribute("registrationValues") RegistrationBean registration) {
 		System.out.println(registration.getName().concat(registration.getContactNo()).concat(registration.getArea())
 				.concat(registration.getSelectedCountry()));
 		ModelAndView modelAndView = new ModelAndView("home");
