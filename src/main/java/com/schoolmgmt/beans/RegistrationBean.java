@@ -5,6 +5,7 @@ import java.io.Serializable;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.WebApplicationContext;
 
 /**
  * 
@@ -20,7 +21,7 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class RegistrationBean implements Serializable {
 
 	private static final long serialVersionUID = 4197452551999212240L;
