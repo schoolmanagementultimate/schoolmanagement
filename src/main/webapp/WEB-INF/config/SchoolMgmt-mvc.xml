@@ -23,11 +23,25 @@
 		<property name="defaultEncoding" value="UTF-8"/>
 	</bean>
 	
+	<!-- Commenting out, as Tiles Resource Based View Resolver is used -->
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/jsp directory -->	
-	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<!-- <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="contentType" value="text/html;charset=UTF-8"/>
 		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 		<property name="prefix" value="/WEB-INF/jsp/"/>
 		<property name="suffix" value=".jsp"/>
+	</bean>  -->
+	
+	<!-- Apache Tiles 3 Configuration -->
+	<bean id="tilesConfigurer"	class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/defs/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+    	<property name="basename" value="schoolMgmt-views"/>
 	</bean>
 </beans>
